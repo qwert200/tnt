@@ -21,6 +21,8 @@ from VIPMUSIC.utils.decorators.language import LanguageStart
 from VIPMUSIC.utils.formatters import get_readable_time
 from config import BANNED_USERS
 from strings import get_string
+from VIPMUSIC.utils.inline import (help_pannel, private_panel,
+                                     start_pannel)
 
 
 
