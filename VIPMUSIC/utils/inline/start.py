@@ -37,7 +37,7 @@ def private_panel(_):
             InlineKeyboardButton(text="‹ طريقه التفعيل ›", callback_data="help_callback hb6"),
         ],
         [
-            InlineKeyboardButton(text="‹ المطور ›", user_id=OWNER)
+            InlineKeyboardButton(text="‹ المطور ›", url=f"https://t.me/ah_2_v")
         ],
     ]
     return buttons
