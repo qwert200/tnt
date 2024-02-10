@@ -29,7 +29,7 @@ from VIPMUSIC.utils.database import (
 )
 from VIPMUSIC.utils.decorators.language import languageCB
 from VIPMUSIC.utils.formatters import seconds_to_min
-from VIPMUSIC.utils.inline import close_markup, stream_markup, stream_markup_timer
+from VIPMUSIC.utils.inline import close_markup, stream_markup, stream_markup_timer, telegram_markup_timer
 from VIPMUSIC.utils.inline.play import panel_markup_1, panel_markup_2, panel_markup_3
 from VIPMUSIC.utils.stream.autoclear import auto_clean
 from VIPMUSIC.utils.thumbnails import get_thumb
@@ -575,7 +575,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         )
 
 async def markup_timer():
-    while not await asyncio.sleep(807):
+    while not await asyncio.sleep(4):
         active_chats = await get_active_chats()
         for chat_id in active_chats:
             try:
@@ -589,10 +589,11 @@ async def markup_timer():
                     continue
                 try:
                     mystic = playing[0]["mystic"]
+                    markup = playing[0]["markup"]
                 except:
                     continue
                 try:
-                    check = checker[chat_id][mystic.id]
+                    check = checker[chat_id][mystic.message_id]
                     if check is False:
                         continue
                 except:
@@ -603,11 +604,21 @@ async def markup_timer():
                 except:
                     _ = get_string("en")
                 try:
-                    buttons = stream_markup_timer(
-                        _,
-                        chat_id,
-                        seconds_to_min(playing[0]["played"]),
-                        playing[0]["dur"],
+                    buttons = (
+                        stream_markup_timer(
+                            _,
+                            playing[0]["vidid"],
+                            chat_id,
+                            seconds_to_min(playing[0]["played"]),
+                            playing[0]["dur"],
+                        )
+                        if markup == "stream"
+                        else telegram_markup_timer(
+                            _,
+                            chat_id,
+                            seconds_to_min(playing[0]["played"]),
+                            playing[0]["dur"],
+                        )
                     )
                     await mystic.edit_reply_markup(
                         reply_markup=InlineKeyboardMarkup(buttons)
