@@ -31,7 +31,6 @@ def first_page(_):
 
 
 def second_page(_):
-	controll_button = [InlineKeyboardButton(text="๏ عودة ๏", callback_data=f"settings_back_helper")]
 	second_page_menu = InlineKeyboardMarkup(
         [
             [
