@@ -1,10 +1,10 @@
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardButton
 
 import config
 from VIPMUSIC import app
 
 
-def start_pannel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
+def start_panel(_):
     buttons = [
         [
             InlineKeyboardButton(
