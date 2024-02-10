@@ -14,7 +14,7 @@ def start_panel(_):
         [
             InlineKeyboardButton(text="‹ اوامر التشغيل ›", callback_data="settings_back_helper"),
             InlineKeyboardButton(
-                text="☢ 𝐒𝙴𝚃 ☢", callback_data="settings_helper"
+                text="‹ الاعدادات ›", callback_data="settings_helper"
             ),
         ],
         [
