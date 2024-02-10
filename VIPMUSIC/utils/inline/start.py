@@ -4,40 +4,52 @@ import config
 from VIPMUSIC import app
 
 
-def start_panel(_):
+def start_pannel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["S_B_1"], url=f"https://t.me/{app.username}?startgroup=true"
-            ),
-        ],
-        [
-            InlineKeyboardButton(text="۞ 𝐇𝙴𝙻𝙿 ۞", callback_data="settings_back_helper"),
-            InlineKeyboardButton(
-                text="☢ 𝐒𝙴𝚃 ☢", callback_data="settings_helper"
-            ),
-        ],
-        [
-            InlineKeyboardButton(text="✡ 𝐆𝚁𝙾𝚄𝙿 ✡", url=config.SUPPORT_CHAT),
-        ],
-    ]
-    return buttons
-
-
-def private_panel(_):
-    buttons = [
-        [
-            InlineKeyboardButton(
-                text=_["S_B_3"],
-                url=f"https://t.me/{app.username}?startgroup=true",
+                text="اضغط لاضافه البوت لمجموعتك",
+                url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
             )
         ],
         [
-            InlineKeyboardButton(text="𝐆𝚁𝙾𝚄𝙿✨", url=config.SUPPORT_CHAT),
-            InlineKeyboardButton(text="𝐌ᴏʀᴇ🥀", url=config.SUPPORT_CHANNEL),
+            InlineKeyboardButton(
+                text="‹ اوامر التشغيل ›",
+                callback_data="settings_back_helper",
+            ),
+            InlineKeyboardButton(
+                text="‹ الاعدادات ›", callback_data="settings_helper"
+            ),
+        ],
+     ]
+    return buttons
+
+
+def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text="اضغط لاضافه البوت لمجموعتك",
+                url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+            )
         ],
         [
-            InlineKeyboardButton(text="۞ 𝐅𝙴𝙰𝚃𝚄𝚁𝙴𝚂 ۞", callback_data="settings_back_helper")
+            InlineKeyboardButton(
+                text="‹ طريقه التفعيل ›", callback_data="help_callback hb6"
+            ), 
+            InlineKeyboardButton(
+                text="‹ اوامر التشغيل ›", callback_data="settings_back_helper"
+             )
         ],
-    ]
+        [
+            InlineKeyboardButton(
+                text="‹ المطور ›", user_id=OWNER
+            )
+        ],
+        [ 
+            InlineKeyboardButton(
+                text="‹ قـناة الـبوت ›", url=f"https://t.me/ah07v"
+            )
+        ],
+     ]
     return buttons
