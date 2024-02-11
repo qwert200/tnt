@@ -15,7 +15,7 @@ app.on_message(
     & filters.group)
 async def help(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://te.legra.ph/file/4b52da6d880cbb199298a.jpg",
+        photo=f"https://te.legra.ph/file/ba9d2c3c527ae4d01709a.jpg",
         caption=f"""🍁𝐂𝐋𝐈𝐂𝐊🥰𝐁𝐄𝐋𝐎𝐖💝𝐁𝐔𝐓𝐓𝐎𝐍✨𝐓𝐎🙊𝐆𝐄𝐓🌱𝐑𝐄𝐏𝐎🍁""",
         reply_markup=InlineKeyboardMarkup(
             [
@@ -28,34 +28,35 @@ async def help(client: Client, message: Message):
     )
 
 @app.on_message(
-    filters.command("repo")
-    & filters.group)
+   filters.command(["قناتي"] ,prefixes=["/", "!", "%", ",", "", ".", "@", "#"])
+            
+    & filters.group) 
 async def help(client: Client, message: Message):
     await message.reply_photo(
-        photo=f"https://te.legra.ph/file/4b52da6d880cbb199298a.jpg",
-        caption=f"""🍁𝐂𝐋𝐈𝐂𝐊🥰𝐁𝐄𝐋𝐎𝐖💝𝐁𝐔𝐓𝐓𝐎𝐍✨𝐓𝐎🙊𝐆𝐄𝐓🌱𝐑𝐄𝐏𝐎🍁""",
+        photo=f"https://te.legra.ph/file/ba9d2c3c527ae4d01709a.jpg",
+        caption=f"""‏"يّارب قلبًا لا يبالي بعابرٍ لم يُحسن العبور ، قلبًا نقيًا يكتم الغيظ ، يعفو عن الناس ويصبر على الأذى ، قلبًا سليمًا وممتلىء بك 🌸🤍.""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🌱ƨσʋяcɛ🌱", url=f"https://github.com/THE-VIP-BOY-OP/VIP-MUSIC")
+                        "♚...« مـكـنـوناتي 𝙷𝙼𝙳 »... ♚", url=f"https://t.me/ah07v")
                 ]
             ]
         ),
     )
 
 @app.on_message(
-    filters.command("repo")
+   filters.command(["قناتي"] ,prefixes=["/", "!", "%", ",", "", ".", "@", "#"])
     & filters.private)
 async def help(client: Client, message: Message):
     await message.reply_photo(
         photo=f"https://te.legra.ph/file/4b52da6d880cbb199298a.jpg",
-        caption=f"""🍁𝐂𝐋𝐈𝐂𝐊🥰𝐁𝐄𝐋𝐎𝐖💝𝐁𝐔𝐓𝐓𝐎𝐍✨𝐓𝐎🙊𝐆𝐄𝐓🌱𝐑𝐄𝐏𝐎🍁""",
+        caption=f"""‏"يّارب قلبًا لا يبالي بعابرٍ لم يُحسن العبور ، قلبًا نقيًا يكتم الغيظ ، يعفو عن الناس ويصبر على الأذى ، قلبًا سليمًا وممتلىء بك 🌸🤍.""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🌱ƨσʋяcɛ🌱", url=f"https://github.com/THE-VIP-BOY-OP/VIP-MUSIC")
+                        "♚...« مـكـنـوناتي 𝙷𝙼𝙳 »... ♚", url=f"https://t.me/ah07v")
                 ]
             ]
         ),
