@@ -36,8 +36,6 @@ async def make_carbon(code):
 @language
 async def ping_com(client, message: Message, _):
     PING_IMG_URL = "https://telegra.ph/file/37b57c6aaaa793bba055a.jpg"
-    captionss = "**صلـوا علـى جمّيـل الوجـه ،و بـدرُ التمـام ،شفيـع الخلـق فـي يـوم الزحـام.
-‏اللهـم صلـى وسلـم علـى نبينـا مُحمد ﷺ🤍**"
     response = await message.reply_photo(PING_IMG_URL, caption=(captionss))
     await asyncio.sleep(1)
     await response.edit_caption("**صلـوا علـى جمّيـل الوجـه ،و بـدرُ التمـام ،شفيـع الخلـق فـي يـوم الزحـام.
