@@ -3,29 +3,31 @@ from pyrogram import filters
 from pyrogram.enums import ParseMode
 
 
-@app.on_message(filters.command("me"))
+@app.on_message(
+   filters.command(["الايدي"] ,prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 def ids(_, message):
     reply = message.reply_to_message
     if reply:
         message.reply_text(
-            f"ʏᴏᴜʀ ɪᴅ: {message.from_user.id}\n{reply.from_user.first_name}'s ɪᴅ: {reply.from_user.id}\nᴄʜᴀᴛ ɪᴅ: {message.chat.id}"
+            f"ايدك: {message.from_user.id}\n{reply.from_user.first_name}'s ɪᴅ: {reply.from_user.id}\nᴄʜᴀᴛ ɪᴅ: {message.chat.id}"
         )
     else:
         message.reply(
-            f"ʏᴏᴜʀ ɪᴅ: {message.from_user.id}\nᴄʜᴀᴛ ɪᴅ: {message.chat.id}"
+            f"ايدي المجموعة: {message.from_user.id}\nᴄʜᴀᴛ ɪᴅ: {message.chat.id}"
         )
 
 ####
 
-@app.on_message(filters.command('id'))
+@app.on_message(
+   filters.command(["ايدي"] ,prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def getid(client, message):
     chat = message.chat
     your_id = message.from_user.id
     message_id = message.id
     reply = message.reply_to_message
 
-    text = f"**[ᴍᴇssᴀɢᴇ ɪᴅ:]({message.link})** `{message_id}`\n"
-    text += f"**[ʏᴏᴜʀ ɪᴅ:](tg://user?id={your_id})** `{your_id}`\n"
+    text = f"**[رسائلك:]({message.link})** `{message_id}`\n"
+    text += f"**[ايدك:](tg://user?id={your_id})** `{your_id}`\n"
 
     if not message.command:
         message.command = message.text.split()
@@ -37,12 +39,12 @@ async def getid(client, message):
         try:
             split = message.text.split(None, 1)[1].strip()
             user_id = (await client.get_users(split)).id
-            text += f"**[ᴜsᴇʀ ɪᴅ:](tg://user?id={user_id})** `{user_id}`\n"
+            text += f"**[يوزرك:](tg://user?id={user_id})** `{user_id}`\n"
 
         except Exception:
             return await message.reply_text("ᴛʜɪs ᴜsᴇʀ ᴅᴏᴇsɴ'ᴛ ᴇxɪsᴛ.", quote=True)
 
-    text += f"**[ᴄʜᴀᴛ ɪᴅ:](https://t.me/{chat.username})** `{chat.id}`\n\n"
+    text += f"**[ايدي المجموعة:](https://t.me/{chat.username})** `{chat.id}`\n\n"
 
     if (
         not getattr(reply, "empty", True)
