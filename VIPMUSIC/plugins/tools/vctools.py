@@ -40,7 +40,8 @@ async def brah3(app: app, message: Message):
 
 ####
 
-@app.on_message(filters.command("math","حل","رياضيات", prefixes=""))
+@app.on_message(
+   filters.command(["حل","رياضيات"] ,prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 def calculate_math(client, message):   
     expression = message.text.split("/math ", 1)[1]
     try:        
