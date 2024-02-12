@@ -103,15 +103,15 @@ async def handle_member_update(client: app, member: ChatMemberUpdated):
 
             # Welcome message for new members
             caption = (
-            f"**🌷𝐇ᴇʏ {member.new_chat_member.user.mention}**\n\n**🏘𝐖ᴇʟᴄᴏᴍᴇ 𝐈ɴ 𝐍ᴇᴡ 𝐆ʀᴏᴜᴘ🥳**\n\n"
+            f"**🌷هلا {member.new_chat_member.user.mention}**\n\n**🏘اهلاً بك في المجموعة 🥳**\n\n"
             f"**📝** {chat.title}\n"
-            f"**🔐ʟɪɴᴋ » @{chat.username}**\n➖➖➖➖➖➖➖➖➖➖➖\n"
-            f"**๏ ᴍᴇᴍʙᴇʀ ɪᴅ »** `{member.new_chat_member.user.id}`\n"
-            f"**๏ ᴜsᴇʀɴᴀᴍᴇ » @{member.new_chat_member.user.username}**\n➖➖➖➖➖➖➖➖➖➖➖\n"
-            f"**👥ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀ ɴᴏᴡ » {count}**"
+            f"**🔐رابط المجموعة » @{chat.username}**\n➖➖➖➖➖➖➖➖➖➖➖\n"
+            f"**๏ ايـدك »** `{member.new_chat_member.user.id}`\n"
+            f"**๏ يـوزرك » @{member.new_chat_member.user.username}**\n➖➖➖➖➖➖➖➖➖➖➖\n"
+            f"**👥عدد اعضاء المجموعة » {count}**"
             )
-            button_text = "๏ ᴠɪᴇᴡ ɴᴇᴡ ᴍᴇᴍʙᴇʀ ๏"
-            add_button_text = "๏ ᴋɪᴅɴᴀᴘ ᴍᴇ ๏"
+            button_text = "๏ ✨حسابـك ๏"
+            add_button_text = "๏ 🍃اضفنـي ๏"
 
             # Generate a deep link to open the user's profile
             deep_link = f"tg://openmessage?user_id={user.id}"
