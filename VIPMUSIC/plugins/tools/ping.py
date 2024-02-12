@@ -36,50 +36,50 @@ async def make_carbon(code):
 @language
 async def ping_com(client, message: Message, _):
     PING_IMG_URL = "https://telegra.ph/file/37b57c6aaaa793bba055a.jpg"
-    captionss = "**🥀ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ.**"
+    captionss = "**صلـوا علـى جمّيـل الوجـه ،و بـدرُ التمـام ،شفيـع الخلـق فـي يـوم الزحـام.
+‏اللهـم صلـى وسلـم علـى نبينـا مُحمد ﷺ🤍**"
     response = await message.reply_photo(PING_IMG_URL, caption=(captionss))
     await asyncio.sleep(1)
-    await response.edit_caption("**🥀ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ...**")
+    await response.edit_caption("**صلـوا علـى جمّيـل الوجـه ،و بـدرُ التمـام ،شفيـع الخلـق فـي يـوم الزحـام.
+‏اللهـم صلـى وسلـم علـى نبينـا مُحمد ﷺ🤍**")
     await asyncio.sleep(1)
-    await response.edit_caption("**🥀ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ.**")
+    await response.edit_caption("**صلـوا علـى جمّيـل الوجـه ،و بـدرُ التمـام ،شفيـع الخلـق فـي يـوم الزحـام.
+‏اللهـم صلـى وسلـم علـى نبينـا مُحمد ﷺ🤍**")
     await asyncio.sleep(1)
-    await response.edit_caption("**🥀ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ..**")
+    await response.edit_caption("**صلـوا علـى جمّيـل الوجـه ،و بـدرُ التمـام ،شفيـع الخلـق فـي يـوم الزحـام.
+‏اللهـم صلـى وسلـم علـى نبينـا مُحمد ﷺ🤍**")
     await asyncio.sleep(1.5)
-    await response.edit_caption("**🥀ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ...**")
+    await response.edit_caption("**صلـوا علـى جمّيـل الوجـه ،و بـدرُ التمـام ،شفيـع الخلـق فـي يـوم الزحـام.
+‏اللهـم صلـى وسلـم علـى نبينـا مُحمد ﷺ🤍**")
     await asyncio.sleep(2)
-    await response.edit_caption("**🥀ᴘɪɴɢɪɴɢ ᴏᴜʀ sᴇʀᴠᴇʀ ᴡᴀɪᴛ....**")
+    await response.edit_caption("**صلـوا علـى جمّيـل الوجـه ،و بـدرُ التمـام ،شفيـع الخلـق فـي يـوم الزحـام.
+‏اللهـم صلـى وسلـم علـى نبينـا مُحمد ﷺ🤍**")
     await asyncio.sleep(2)
-    await response.edit_caption("**📡sʏsᴛᴇᴍ ᴅᴀᴛᴀ ᴀɴᴀʟʏsᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ !**")
-    await asyncio.sleep(3)
-    await response.edit_caption("**📩sᴇɴᴅɪɴɢ sʏsᴛᴇᴍ ᴀɴᴀʟʏsᴇᴅ ᴅᴀᴛᴀ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...**")
+    await response.edit_caption("**صلـوا علـى جمّيـل الوجـه ،و بـدرُ التمـام ،شفيـع الخلـق فـي يـوم الزحـام.
+‏اللهـم صلـى وسلـم علـى نبينـا مُحمد ﷺ🤍**")
     start = datetime.now()
     pytgping = await VIP.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
     resp = (datetime.now() - start).microseconds / 1000
     text =  _["ping_2"].format(resp, app.name, UP, RAM, CPU, DISK, pytgping)
     carbon = await make_carbon(text)
-    captions = "**ㅤ  🏓 ᴘɪɴɢ...ᴘᴏɴɢ...ᴘɪɴɢ✨\nㅤ  🎸 ᴅɪɴɢ...ᴅᴏɴɢ...ᴅɪɴɢ💞**"
+    captions = "**صلـوا علـى جمّيـل الوجـه ،و بـدرُ التمـام ،شفيـع الخلـق فـي يـوم الزحـام.
+‏اللهـم صلـى وسلـم علـى نبينـا مُحمد ﷺ🤍**"
     await message.reply_photo((carbon), caption=captions,
     reply_markup=InlineKeyboardMarkup(
             [
                 [
             InlineKeyboardButton(
-                text=_["S_B_5"],
-                url=f"https://t.me/{app.username}?startgroup=true",
+                text="✦ المطور ✦", url=f"https://t.me/TG_FRIENDSS",
             )
         
         ],
         [
             InlineKeyboardButton(
-                text="✦ ɢʀᴏᴜᴘ ✦", url=f"https://t.me/TG_FRIENDSS",
+                text="✦ قناة الـبوت ✦", url=f"https://t.me/ah07v",
             ),
             InlineKeyboardButton(
-                text="✧ ᴍᴏʀᴇ ✧", url=f"https://t.me/VIP_CREATORS",
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text="❅ ʜᴇʟᴘ ❅", url=f"https://t.me/{app.username}?start=help"
+                text="✦ اوامر الاشغيل ✦", url=f"https://t.me/{app.username}?start=help"
             )
         ],
     ]
@@ -87,7 +87,7 @@ async def ping_com(client, message: Message, _):
         )
     await response.delete()
 
-    close_button = InlineKeyboardButton("๏ ᴄʟᴏsᴇ ๏", callback_data="close_data")
+    close_button = InlineKeyboardButton("๏ اغلاق ๏", callback_data="close_data")
     inline_keyboard = InlineKeyboardMarkup([[close_button]])
 
 @app.on_callback_query(filters.regex("^close_data"))
