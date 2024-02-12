@@ -21,11 +21,12 @@ from youtubesearchpython import SearchVideos
 
 # ------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("song"))
+@app.on_message(
+   filters.command(["تحميل"] ,prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 def download_song(_, message):
     query = " ".join(message.command[1:])  
     print(query)
-    m = message.reply("**🔄 sᴇᴀʀᴄʜɪɴɢ... **")
+    m = message.reply("**🚦انتظر قليلا... **")
     ydl_ops = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -45,7 +46,7 @@ def download_song(_, message):
         m.edit("**⚠️ ɴᴏ ʀᴇsᴜʟᴛs ᴡᴇʀᴇ ғᴏᴜɴᴅ. ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ ᴛʏᴘᴇᴅ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ sᴏɴɢ ɴᴀᴍᴇ**")
         print(str(e))
         return
-    m.edit("**📥 ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...**")
+    m.edit("**📥 🚦جاࢪي التحميل...**")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
@@ -55,13 +56,13 @@ def download_song(_, message):
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        m.edit("**📤 ᴜᴘʟᴏᴀᴅɪɴɢ...**")
+        m.edit("**📤 🚦🚦جاࢪي الرفع...**")
 
         message.reply_audio(
             audio_file,
             thumb=thumb_name,
             title=title,
-            caption=f"{title}\nRᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➪{message.from_user.mention}\nVɪᴇᴡs➪ {views}\nCʜᴀɴɴᴇʟ➪ {channel_name}",
+            caption=f"{title}\nتم التخميل بواسطة ➪{message.from_user.mention}\nالتعليقات {views}\nاسم القناة {channel_name}",
             duration=dur
         )
         m.delete()
