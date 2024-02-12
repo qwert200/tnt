@@ -32,7 +32,7 @@ def get_text(message: Message) -> [None, str]:
 
 
 @app.on_message(
-   filters.command(["تحميل","يوتيوب"] ,prefixes=["/", "!", "%", ",", "", ".", "@", "#"])
+   filters.command(["تحميل فيديو","يوتيوب"] ,prefixes=["/", "!", "%", ",", "", ".", "@", "#"])
             
     & filters.group
     & ~BANNED_USERS)
