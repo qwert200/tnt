@@ -31,7 +31,11 @@ def get_text(message: Message) -> [None, str]:
         return None
 
 
-@app.on_message(filters.command(["yt", "video"]))
+@app.on_message(
+   filters.command(["تحميل","يوتيوب"] ,prefixes=["/", "!", "%", ",", "", ".", "@", "#"])
+            
+    & filters.group
+    & ~BANNED_USERS)
 async def ytmusic(client, message: Message):
     urlissed = get_text(message)
     await message.delete()
@@ -80,7 +84,7 @@ async def ytmusic(client, message: Message):
         return
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
-    capy = f"❄ **ᴛɪᴛʟᴇ :** [{thum}]({mo})\n💫 **ᴄʜᴀɴɴᴇʟ :** {thums}\n✨ **sᴇᴀʀᴄʜᴇᴅ :** {urlissed}\n🥀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {chutiya}"
+    capy = f"❄ **رابط الفيديو :** [{thum}]({mo})\n💫 **اسم القناة:** {thums}\n✨ **البحث:** {urlissed}\n🥀 **تم البحث بواسطة :** {chutiya}"
     await client.send_video(
         message.chat.id,
         video=open(file_stark, "rb"),
