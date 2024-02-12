@@ -56,8 +56,7 @@ async def ping_com(client, message: Message, _):
     resp = (datetime.now() - start).microseconds / 1000
     text =  _["ping_2"].format(resp, app.name, UP, RAM, CPU, DISK, pytgping)
     carbon = await make_carbon(text)
-    captions = "**صلـوا علـى جمّيـل الوجـه ،و بـدرُ التمـام ،شفيـع الخلـق فـي يـوم الزحـام.
-‏اللهـم صلـى وسلـم علـى نبينـا مُحمد ﷺ🤍**"
+    await response.edit_caption("**استقيمي ايتها النفس عسى أن يكون الرحيل قريبا ✨🥺💔**")
     await message.reply_photo((carbon), caption=captions,
     reply_markup=InlineKeyboardMarkup(
             [
