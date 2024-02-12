@@ -40,7 +40,7 @@ async def brah3(app: app, message: Message):
 
 ####
 
-@app.on_message(filters.command("math", prefixes="/"))
+@app.on_message(filters.command("math","حل","رياضيات", prefixes=""))
 def calculate_math(client, message):   
     expression = message.text.split("/math ", 1)[1]
     try:        
@@ -51,7 +51,7 @@ def calculate_math(client, message):
     message.reply(response)
 
 ###
-@app.on_message(filters.command("leavegroup")& filters.user(OWNER_ID))
+@app.on_message(filters.command("مغادرة")& filters.user(OWNER_ID))
 async def bot_leave(_, message):
     chat_id = message.chat.id
     text = f"sᴜᴄᴄᴇssғᴜʟʟʏ   ʟᴇғᴛ  !!."
