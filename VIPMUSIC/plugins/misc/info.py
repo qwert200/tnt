@@ -14,9 +14,7 @@ random_photo = [
     "https://telegra.ph/file/3ef2cc0ad2bc548bafb30.jpg",
     "https://telegra.ph/file/a7d663cd2de689b811729.jpg",
     "https://telegra.ph/file/6f19dc23847f5b005e922.jpg",
-    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg",
-]
-
+    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg", 
 # --------------------------------------------------------------------------------- #
 
 
@@ -74,16 +72,15 @@ font_path = "VIPMUSIC/assets/hiroko.ttf"
 
 INFO_TEXT = """**
 ❅─────✧❅✦❅✧─────❅
-            ✦ ᴜsᴇʀ ɪɴғᴏ ✦
 
-➻ ᴜsᴇʀ ɪᴅ ‣ **`{}`
-**➻ ғɪʀsᴛ ɴᴀᴍᴇ ‣ **{}
-**➻ ʟᴀsᴛ ɴᴀᴍᴇ ‣ **{}
-**➻ ᴜsᴇʀɴᴀᴍᴇ ‣ **`{}`
-**➻ ᴍᴇɴᴛɪᴏɴ ‣ **{}
-**➻ ʟᴀsᴛ sᴇᴇɴ ‣ **{}
-**➻ ᴅᴄ ɪᴅ ‣ **{}
-**➻ ʙɪᴏ ‣ **`{}`
+➻ ايدك ‣ **`{}`
+**➻ الاسم الاول ‣ **{}
+**➻ الاسم الاخير ‣ **{}
+**➻ يوزرك ‣ **`{}`
+**➻ حسابي ‣ **{}
+**➻ اخر ظهور ‣ **{}
+**➻ نوع حسابك ‣ **{}
+**➻ البايو ‣ **`{}`
 
 **❅─────✧❅✦❅✧─────❅**
 """
@@ -112,7 +109,7 @@ async def userstatus(user_id):
 
 
 
-@app.on_message(filters.command(["info", "userinfo"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
+@app.on_message(filters.command(["حسابي, "userinfo"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def userinfo(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id
